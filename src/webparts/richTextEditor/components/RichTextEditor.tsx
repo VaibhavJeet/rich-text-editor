@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { IRichTextEditorProps } from './IRichTextEditorProps';
 import SunEditor from 'suneditor-react';
-import 'suneditor/dist/css/suneditor.min.css';
+require ('suneditor/dist/css/suneditor.min.css');
+// import '../styles/suneditor.min.css'
 import { ITextFieldStyleProps, ITextFieldStyles,TextField } from '@fluentui/react/lib/TextField';
 import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
 import { Stack, IStackTokens } from '@fluentui/react';
@@ -54,20 +55,22 @@ export default class RichTextEditor extends React.Component<IRichTextEditorProps
         </div>
         <div>
         <SunEditor
-            onChange={this.handleChange}
-             lang="en"
-             width="100%"
-             height="300"
-             autoFocus={true}
-             placeholder="Please type here"
-             setOptions={{
-              buttonList:[
-                [
-                  "bold",
-                  "list",
-                ]
+          onChange={this.handleChange}
+          lang="en"
+          width="100%"
+          height="300"
+          autoFocus={true}
+          placeholder="Please type here"
+          setOptions={{
+            font: ['"Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif'],
+            defaultStyle: 'font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif; font-size: 14px;',
+            buttonList: [
+              [
+                "bold",
+                "list",
               ]
-            }}/>
+            ]
+          }}/>
         </div>
         <Stack horizontal tokens={stackTokensHorizontal}>
           <DefaultButton text="Submit" type="submit" style={{"fontSize": "12px"}}/>
