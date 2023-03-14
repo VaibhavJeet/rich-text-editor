@@ -58,12 +58,12 @@ export default class RichTextEditor extends React.Component<IRichTextEditorProps
           onChange={this.handleChange}
           lang="en"
           width="100%"
-          height="300"
+          height='auto'
           autoFocus={true}
-          placeholder="Please type here"
           setOptions={{
             font: ['"Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif'],
             defaultStyle: 'font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif; font-size: 14px;',
+            minHeight: '200px',
             buttonList: [
               [
                 "bold",
